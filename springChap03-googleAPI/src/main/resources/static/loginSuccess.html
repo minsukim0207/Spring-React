@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="EUC-KR">
+<title>Login Success</title>
+</head>
+<body>
+	<h1 th:if="${newUser}">환영</h1>
+	<h1 th:unless="${newUser}">다시 오신것을 환영합니다.</h1>
+	<p th:text="${#authentication.principal.getAttribute('email')}"></p>
+	<!-- 로그아웃 링크 추가 -->
+	<a th:href="@{/oauth/logout}">로그아웃</a>
+</body>
+</html>
